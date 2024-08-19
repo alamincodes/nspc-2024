@@ -1,4 +1,3 @@
-import { IoIosWallet } from "react-icons/io";
 import { FaMap } from "react-icons/fa";
 
 export const menus = [

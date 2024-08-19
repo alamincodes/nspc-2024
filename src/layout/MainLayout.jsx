@@ -1,3 +1,4 @@
+import Header from "@/components/header/Header";
 import MobileSidebar from "@/components/sidebar/MobileSidebar";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { useState } from "react";
@@ -14,6 +15,9 @@ const MainLayout = () => {
         <MobileSidebar openModal={openModal} setOpenModal={setOpenModal} />
       </div>
       <div className="w-full h-screen">
+        <div className="block md:hidden">
+          <Header setOpenModal={setOpenModal} />
+        </div>
         <Outlet />
       </div>
     </div>

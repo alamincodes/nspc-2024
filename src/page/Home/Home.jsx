@@ -32,10 +32,19 @@ const Home = () => {
 
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/mapbox/standard",
       center: [-68.137343, 45.137451],
-      zoom: 5,
+      projection: "globe",
+      minZoom: 1,
+      maxZoom: 8,
     });
+    // Add navigation control (zoom and rotation controls)
+    const navControl = new mapboxgl.NavigationControl();
+    mapRef.current.addControl(navControl, "top-right");
+
+    // Add fullscreen control
+    const fullscreenControl = new mapboxgl.FullscreenControl();
+    mapRef.current.addControl(fullscreenControl, "top-right");
 
     mapRef.current.on("load", () => {
       if (mapData.length > 0) {
