@@ -7,14 +7,10 @@ import { menus } from "./menu-list";
 
 const Sidebar = () => {
   return (
-    <aside className="flex-col hidden w-full h-screen max-w-full border-r md:flex dark:bg-dark-blue-3">
+    <aside className="flex-col hidden h-screen bg-white border-r max-w-20 md:flex">
       <div>
-        {/* <img
-          src={`/assets/images/logo-${theme === "dark" ? "full" : "dark"}.svg`}
-          className="h-10"
-        /> */}
         <h5 className="pl-4 text-2xl font-extrabold dark:text-white text-bg-d-primary">
-          Logo
+          L
         </h5>
       </div>
       <ScrollArea className="flex-1 py-6">
@@ -28,14 +24,14 @@ const Sidebar = () => {
                   className={({ isActive }) =>
                     [
                       isActive
-                        ? "border-y text-primary relative border-r-4 border-r-primary"
+                        ? "border-y border-violet-500 text-violet-500 relative bg-violet-50  flex justify-center items-center"
                         : "",
                       "flex items-center gap-x-2 px-4 py-2.5 hover:bg-muted dark:hover:bg-dark-blue-2 w-full",
                     ].join(" ")
                   }
                 >
-                  <menu.icon />
-                  <span className="text-sm">{menu.title}</span>
+                  <menu.icon className="w-8 h-8" />
+                  {/* <span className="text-sm">{menu.title}</span> */}
                 </NavLink>
               ) : (
                 <>
