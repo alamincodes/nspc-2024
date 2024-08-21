@@ -7,7 +7,7 @@ const Notifications = ({ data }) => {
     <div>
       {data.map((item, index) => {
         return (
-          <div key={index} className="mb-5">
+          <div key={index} className="mb-2">
             <NotificationCard key={index} item={item} />
           </div>
         );
